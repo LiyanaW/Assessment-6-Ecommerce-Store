@@ -4,128 +4,156 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kiddies Parties | Liyana Events</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <!-- HEADER -->
-  <header id="header">
-    <div class="logo">
-      <img src="images/0001(16).png" alt="Liyana Events Logo">
-    </div>
-    <nav id="menu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <!-- MAIN -->
-  <main id="main-home">
-    <!-- HERO -->
-    <section class="service-hero">
-      <div class="hero-content">
-        <h1>Kiddies Parties</h1>
-        <p>Make your child’s special day unforgettable — from themed décor to delicious treats and exciting entertainment!</p>
-        <a href="contact.html" class="btn-primary">Book a Party</a>
-      </div>
-      <div class="hero-image">
-        <img src="images/birthday-table-with-rainbow-balloons-summer-holiday-park_88194-474.jpg" alt="Kiddies Party Celebration">
-      </div>
-    </section>
-
-    <!-- PACKAGES -->
-    <section class="pricing">
-      <h2>Party Packages</h2>
-      <div class="pricing-container">
-        <div class="package">
-          <h3>🎂 Basic Fun Pack</h3>
-          <p>Perfect for smaller gatherings of up to 10 kids.</p>
-          <ul>
-            <li>Themed décor & table setup</li>
-            <li>Basic cake & party packs</li>
-            <li>1 entertainer or face painter</li>
-          </ul>
-          <div class="price">R1,200</div>
-          <a href="contact.html" class="btn-primary">Book Now</a>
-        </div>
-
-        <div class="package">
-          <h3>🎉 Deluxe Adventure</h3>
-          <p>Our most popular package for up to 20 kids.</p>
-          <ul>
-            <li>Full themed décor & balloon arch</li>
-            <li>Custom cake, snacks & treats</li>
-            <li>2 entertainers + games</li>
-          </ul>
-          <div class="price">R2,800</div>
-          <a href="contact.html" class="btn-primary">Book Now</a>
-        </div>
-
-        <div class="package">
-          <h3>🌈 Ultimate Party</h3>
-          <p>For larger events — go all out with full customization and premium décor.</p>
-          <ul>
-            <li>Luxury themed décor & candy table</li>
-            <li>Custom cake & dessert buffet</li>
-            <li>3 entertainers + sound system</li>
-          </ul>
-          <div class="price">R4,500</div>
-          <a href="contact.html" class="btn-primary">Book Now</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section class="gallery">
-      <h2>Party Moments 🎈</h2>
-      <div class="gallery-grid" id="galleryGrid">
-        <!-- Images load here automatically -->
-      </div>
-    </section>
-  </main>
-
-  <!-- LIGHTBOX -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img" alt="">
-  </div>
-
-  <!-- JS -->
-  <script>
-    // Auto-load gallery images
-    const galleryGrid = document.getElementById('galleryGrid');
-    const totalImages = 4; // change this if you add more images
-
-    for (let i = 1; i <= totalImages; i++) {
-      const img = document.createElement('img');
-      img.src = `images/kids-party-${i}.jpg`;
-      img.alt = `Kiddies Party ${i}`;
-      galleryGrid.appendChild(img);
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #fff8f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
     }
 
-    // Lightbox script
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn = document.querySelector('.close');
+    .combo-details {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
 
-    galleryGrid.addEventListener('click', (e) => {
-      if (e.target.tagName === 'IMG') {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = e.target.src;
-      }
-    });
+    h1 {
+      color: #e17ba8;
+      margin-bottom: 20px;
+    }
 
-    closeBtn.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-    });
+    .resized-image-product {
+      width: 250px;
+      height: 180px;
+      margin: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
 
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-      }
-    });
+    .resized-image-product:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+
+    ul {
+      text-align: left;
+      max-width: 400px;
+      margin: 0 auto 20px;
+    }
+
+    .price {
+
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #e17ba8;
+   
+    }
+
+    .button1 {
+      display: inline-block;
+      padding: 10px 25px;
+      background-color: #e17ba8;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+     
+      transition: background 0.3s;
+    }
+
+    .button1:hover {
+      background-color: #ff94c2;
+    }
+
+    /* Lightbox styling */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 80px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .lightbox-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+ 
+  <div class="combo-details">
+	<h1>Kiddies Parties</h1>
+	  
+     <img src="images/birthday-table-with-rainbow-balloons-summer-holiday-park_88194-474.jpg" alt="Kiddies Party Celebration">
+     <img src="images/birthday-table-with-rainbow-balloons-summer-holiday-park_88194-474.jpg" alt="Kiddies Party Celebration">
+     <img src="images/birthday-table-with-rainbow-balloons-summer-holiday-park_88194-474.jpg" alt="Kiddies Party Celebration">  
+        
+    <p>Combo Pack 1 Includes:</p>
+          <ul>
+            <li>Basic cake & party packs</li>
+            <li>1 entertainer or face painter</li>
+            <li>Themed décor</li>
+			<li>Table setup</li>
+			
+ </ul>
+			
+			 <p>Perfect for smaller gatherings of up to 10 kids.</p>
+    <span class="price">R1200</span>
+     
+    <br><br>
+
+	<a href="index.html" class="button1">Back to Home</a>
+  </div>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  
+  <script>
+  function openLightbox(img) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightbox.style.display = 'block';
+      lightboxImg.src = img.src;
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
   </script>
 
 </body>
+</html>
+
 </html>
