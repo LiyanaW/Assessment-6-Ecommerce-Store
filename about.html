@@ -1,46 +1,228 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Liyana Events</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      margin:0;
+      padding:0;
+      background-color:#f9fafc;
+      color:#333;
+      line-height:1.6;
+    }
+    #header {
+      background:#ffffff;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+      padding:15px 40px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+    #header img {
+      height:60px;
+      width:auto;
+    }
+    #menu a {
+      margin: 0 12px;
+      color:#3651a3;
+      text-decoration:none;
+      font-weight:600;
+      transition:color .3s;
+    }
+    #menu a:hover,
+    #menu a.active {
+      color:#ff8b94;
+    }
+    .about-hero {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:wrap;
+      padding:60px 20px;
+      background: linear-gradient(135deg, #fff6f8, #e9f4ff);
+    }
+    .about-hero img {
+      max-width:500px;
+      width:100%;
+      border-radius:12px;
+      margin:20px;
+      box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    }
+    .about-hero .hero-text {
+      max-width:500px;
+      margin:20px;
+    }
+    .about-hero h1 {
+      font-size:2.8em;
+      color:#3651a3;
+      margin-bottom:15px;
+    }
+    .about-hero p {
+      font-size:1.2em;
+      color:#444;
+    }
+    .mission-section,
+    .team-section {
+      padding:50px 20px;
+      max-width:900px;
+      margin:0 auto;
+      text-align:center;
+    }
+    .mission-section h2,
+    .team-section h2 {
+      font-size:2.4em;
+      margin-bottom:25px;
+      color:#3651a3;
+    }
+    .mission-section p {
+      font-size:1.1em;
+      color:#555;
+      max-width:800px;
+      margin:0 auto 30px;
+    }
+    .team-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+      gap:30px;
+      margin-top:30px;
+    }
+    .team-member {
+      background:#fff;
+      padding:20px;
+      border-radius:10px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+    .team-member img {
+      width:100%;
+      border-radius:8px;
+      margin-bottom:15px;
+    }
+    .team-member h3 {
+      margin:10px 0 5px;
+      color:#3651a3;
+    }
+    .team-member p {
+      color:#777;
+      font-size:0.95em;
+    }
+    .cta-section {
+      text-align:center;
+      padding:60px 20px;
+      background:#3651a3;
+      color:#fff;
+    }
+    .cta-section h2 {
+      font-size:2.4em;
+      margin-bottom:20px;
+    }
+    .cta-section a {
+      display:inline-block;
+      padding:12px 30px;
+      background:#ff8b94;
+      color:#fff;
+      border-radius:25px;
+      font-size:1.1em;
+      text-decoration:none;
+      font-weight:600;
+      transition:background .3s;
+    }
+    .cta-section a:hover {
+      background:#ffadc1;
+    }
+    #tabs-bottom {
+      background:#3651a3;
+      padding:15px 0;
+      text-align:center;
+    }
+    #tabs-bottom a {
+      color:#fff;
+      text-decoration:none;
+      margin:0 15px;
+      font-weight:500;
+      transition:color .3s;
+    }
+    #tabs-bottom a:hover {
+      color:#ffda79;
+    }
+    @media (max-width:768px) {
+      .about-hero {
+        flex-direction:column;
+      }
+      .about-hero img,
+      .about-hero .hero-text {
+        margin:10px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div id="menu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a> 
-        <div class="logo">
-            <img src="images/0001(16).png" class="resized-image"></div>
 
-
-        <div class="aboutpg">
-        <h2>About Us</h2>
-        <p>We are a proudly South African events and décor company based in the heart of Johannesburg. With years of experience in the events industry, 
-           we have built a reputation for creating unforgettable experiences that bring people together. 
-           Whether you're planning an intimate gathering, a corporate function, or a grand celebration, we specialize in transforming your ideas into beautiful realities.
-           Our journey began with a passion for bringing people joy through well-executed events. We believe that every occasion, whether big or small, deserves a special touch that leaves a lasting impression. 
-           From weddings and birthday parties to product launches and charity galas, our team is committed to delivering a seamless and stress-free experience from start to finish.</p>
-
-        <p> What sets us apart is our dedication to creativity, precision, and personalization. We work closely with each client to understand their unique vision, ensuring that every detail is tailored to their needs. 
-            Our services include event planning, décor styling, floral arrangements, table settings, lighting design, and more. 
-            No two events are the same — we pride ourselves on crafting bespoke experiences that reflect the personalities and stories of our clients.
-            Based in the vibrant city of Johannesburg, we have had the privilege of working with clients from diverse backgrounds and cultures.
-            Our team draws inspiration from the rich heritage of South Africa, incorporating local elements into our designs to create events that are both authentic and memorable.</p>
-            
-        <p>We understand that planning an event can be overwhelming, which is why we strive to make the process as enjoyable as possible. 
-           Our experienced team handles everything — from venue selection and décor setup to coordination on the day of the event — so you can focus on enjoying the moment.
-           At the heart of our business is a passion for creating lasting memories. 
-           We believe that life's special moments deserve to be celebrated in style, and we are here to make that happen. 
-           Whether it's an elaborate wedding with hundreds of guests or a cozy family gathering, our goal is to leave you and your guests with memories that will be cherished forever.</p>
-            
-        <p>We also pride ourselves on staying up to date with the latest trends in the events industry. 
-           From minimalist modern décor to timeless classic themes, we are always evolving our offerings to ensure that your event feels fresh, stylish, and on-trend.
-           Our commitment to excellence goes beyond just aesthetics — we value building relationships with our clients. 
-           We know that trust is essential in event planning, which is why we are transparent, reliable, and always willing to go the extra mile to exceed your expectations.</p>
-            
-        <p>Thank you for considering us to be part of your special moments. We are excited to work with you and turn your dreams into reality. 
-           Let us help you create an event that will be talked about for years to come.
-           Creating memories. Crafting experiences. Making magic happen. That's what we do best!</p>
+  <header id="header">
+    <div class="logo">
+      <img src="images/0001(16).png" alt="Liyana Events Logo">
     </div>
+    <nav id="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="about-hero">
+    <div class="hero-text">
+      <h1>We Make Every Moment Memorable</h1>
+      <p>At Liyana Events, we believe your celebration deserves elegance, joy and personal flair. Whether it’s a kiddies party, a wedding, or a corporate event — we bring creativity and care to every detail.</p>
     </div>
+    <div class="hero-image">
+      <img src="images/team-event-celebration.jpg" alt="Liyana Events Team">
+    </div>
+  </section>
+
+  <section class="mission-section">
+    <h2>Our Mission & Vision</h2>
+    <p>Founded in Johannesburg, our goal has always been to craft unforgettable experiences where your story is the centre of the celebration. We combine beautiful décor, seamless planning and genuine service to make your event stress-free and spectacular.</p>
+    <p>We envision a world where **every event**, big or small, is an opportunity to reflect your personality, your values and your joy.</p>
+  </section>
+
+  <section class="team-section">
+    <h2>Meet the Team</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="images/founder-photo.jpg" alt="Founder Name">
+        <h3>Founder's Name</h3>
+        <p>Founder & Creative Director</p>
+      </div>
+      <div class="team-member">
+        <img src="images/event-manager.jpg" alt="Event Manager">
+        <h3>Event Manager</h3>
+        <p>Lead Planner & Coordinator</p>
+      </div>
+      <div class="team-member">
+        <img src="images/decor-specialist.jpg" alt="Decor Specialist">
+        <h3>Decor Specialist</h3>
+        <p>Design & Styling Expert</p>
+      </div>
+      <!-- Add more team-members as needed -->
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to plan something beautiful?</h2>
+    <a href="contact.html">Contact Us Today</a>
+  </section>
+
+  <footer id="tabs-bottom">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </footer>
+
 </body>
 </html>
