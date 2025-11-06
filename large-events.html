@@ -1,31 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Combo Pack 3 Details</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combo Pack 3 Details | Liyana Events</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #fff8f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .combo-details {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #e17ba8;
+      margin-bottom: 20px;
+    }
+
+    .resized-image-product {
+      width: 250px;
+      height: 180px;
+      margin: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .resized-image-product:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+
+    ul {
+      text-align: left;
+      max-width: 400px;
+      margin: 0 auto 20px;
+    }
+
+    .price {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #e17ba8;
+    }
+
+    .button1 {
+      display: inline-block;
+      padding: 10px 25px;
+      background-color: #e17ba8;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .button1:hover {
+      background-color: #ff94c2;
+    }
+
+    /* Lightbox styling */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 80px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .lightbox-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="combo-details">
-        <h1>Corporate and Large Events</h1>
-        <img src="images/pexels-pixabay-265920.jpg" alt="Corporate and Large Events" class="resized-image-product">
-        <img src="images/buffet-open-air-table-with-canapes-glasses-against-background-flowering-trees-sky_533998-5407.jpg" alt="Corporate and Large Events" class="resized-image-product">
-        <img src="images/function-2597851_640.jpg" alt="Corporate and Large Events" class="resized-image-product">
-        
-        <p>Combo Pack 3 includes:</p>
-        <ul>
-            <li>50 chairs</li>
-            <li>10 tables</li>
-            <li>Premium decorations</li>
-            <li>Audio setup</li>
-        </ul>
-        <p>This package is ideal for large events, including corporate meetings and weddings.</p>
-        <span class="price">R5500</span>
-        <br>
-        <br>
-        <a href="index.html" class="button1">Back to Home</button>
-        </a>
-         </div>
+  <div class="combo-details">
+    <h1>Corporate and Large Events</h1>
+
+    <img src="images/pexels-pixabay-265920.jpg" alt="Corporate Event" class="resized-image-product" onclick="openLightbox(this)">
+    <img src="images/buffet-open-air-table-with-canapes-glasses-against-background-flowering-trees-sky_533998-5407.jpg" alt="Buffet Setup" class="resized-image-product" onclick="openLightbox(this)">
+    <img src="images/function-2597851_640.jpg" alt="Function Setup" class="resized-image-product" onclick="openLightbox(this)">
+
+    <p>Combo Pack 3 includes:</p>
+    <ul>
+      <li>50 chairs</li>
+      <li>10 tables</li>
+      <li>Premium decorations</li>
+      <li>Audio setup</li>
+    </ul>
+
+    <p>This package is ideal for large events, including corporate meetings and weddings.</p>
+    <span class="price">R5500</span>
+    <br><br>
+    <a href="index.html" class="button1">Back to Home</a>
+  </div>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightbox.style.display = 'block';
+      lightboxImg.src = img.src;
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
