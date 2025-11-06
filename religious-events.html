@@ -1,30 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Combo Pack 5 Details</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combo Pack 5 | Religious Events</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #faf8ff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .combo-details {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #7b6cf2;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    .resized-image-product {
+      width: 260px;
+      height: 180px;
+      margin: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .resized-image-product:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    }
+
+    ul {
+      text-align: left;
+      max-width: 450px;
+      margin: 0 auto 20px;
+      line-height: 1.7;
+    }
+
+    .price {
+      display: block;
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #7b6cf2;
+      margin-top: 15px;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 10px auto 20px;
+      font-size: 1em;
+      line-height: 1.6;
+    }
+
+    .button1 {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: #7b6cf2;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
+      transition: background 0.3s ease;
+    }
+
+    .button1:hover {
+      background-color: #9a8cff;
+    }
+
+    /* Lightbox modal */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 80px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .lightbox-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="combo-details">
-        <h1>Religious Events</h1>
-        <img src="images/pexels-katya-wolf-8715520.jpg" alt="Combo Pack 5" class="resized-image-product">
-        <img src="images/pexels-picjumbo-com-55570-196648.jpg" alt="Combo Pack 5" class="resized-image-product">
-        <img src="images/pexels-timur-weber-9127157.jpg" alt="Combo Pack 5" class="resized-image-product">
-        <p>Combo Pack 5 includes:</p>
-        <ul>
-            <li>100 chairs</li>
-            <li>20 tables</li>
-            <li>Dance floor</li>
-            <li>DJ booth</li>
-            <li>Professional lighting setup</li>
-        </ul>
-        <p>This package is designed for large parties, weddings, and events with a dance floor.</p>
-        <span class="price">R22500</span>
-        <br>
-        <br>
-        <a href="index.html" class="button1">Back to Home</button></a>
-        </div>
+  <div class="combo-details">
+    <h1>Religious Events</h1>
+
+    <!-- Gallery with clickable images -->
+    <img src="images/pexels-katya-wolf-8715520.jpg" alt="Church Setup" class="resized-image-product" onclick="openLightbox(this)">
+    <img src="images/pexels-picjumbo-com-55570-196648.jpg" alt="Wedding Hall" class="resized-image-product" onclick="openLightbox(this)">
+    <img src="images/pexels-timur-weber-9127157.jpg" alt="Decorated Venue" class="resized-image-product" onclick="openLightbox(this)">
+
+    <p>Combo Pack 5 includes:</p>
+    <ul>
+      <li>100 chairs</li>
+      <li>20 tables</li>
+      <li>Dance floor</li>
+      <li>DJ booth</li>
+      <li>Professional lighting setup</li>
+      <li>Elegant décor for ceremonies or celebrations</li>
+    </ul>
+
+    <p>
+      This package is designed for <strong>weddings, religious ceremonies, and large gatherings</strong>.
+      Our setup ensures a peaceful, elegant, and memorable atmosphere for your special event.
+    </p>
+
+    <span class="price">R22,500</span>
+
+    <br><br>
+    <a href="index.html" class="button1">Back to Home</a>
+  </div>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightbox.style.display = 'block';
+      lightboxImg.src = img.src;
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
