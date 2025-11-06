@@ -1,154 +1,179 @@
-/* ================================
-   Liyana Events – Global Styles
-   ================================ */
-
+/* ===================================
+   Liyana Events – Refined Global Styles
+   =================================== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+:root {
+  --primary-color: #3a4ba0;
+  --accent-color: #ff8b94;
+  --background-color: #fafbff;
+  --light-accent: #f2f4fb;
+  --text-color: #333;
+}
+
+/* ===== Base ===== */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9fafc;
-  color: #333;
-  line-height: 1.6;
+  background: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.7;
+  font-size: 16px;
 }
 
-/* ===== Header and Navigation ===== */
+/* ===== Header & Navigation ===== */
 #header {
-  background: #ffffff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  background: linear-gradient(90deg, #ffffff, #f6f7fc);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 40px;
+  padding: 18px 50px;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
 #header img {
-  height: 60px;
+  height: 65px;
   width: auto;
 }
 
+#menu {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
 #menu a {
-  color: #3651a3;
+  color: var(--primary-color);
   text-decoration: none;
-  margin: 0 12px;
+  margin: 0 20px;
   font-weight: 600;
-  transition: color 0.3s ease;
+  font-size: 1.05em;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 4px;
 }
 
 #menu a:hover,
 #menu a.active {
-  color: #ff8b94;
+  color: var(--accent-color);
+  border-bottom: 3px solid var(--accent-color);
 }
 
-/* ===== Page Headers ===== */
+/* ===== Headings ===== */
 h1, h2, h3 {
-  color: #3651a3;
+  color: var(--primary-color);
   text-align: center;
   margin-top: 30px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-/* ===== Combo Page Styling ===== */
+/* ===== Combo Details ===== */
 .combo-details {
-  max-width: 1000px;
-  margin: 50px auto;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  padding: 40px;
+  max-width: 1100px;
+  margin: 60px auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  padding: 50px 40px;
   text-align: center;
+  transition: all 0.3s ease;
+}
+
+.combo-details:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
 .combo-details img.resized-image-product {
-  width: 30%;
-  height: auto;
-  margin: 10px;
+  width: 28%;
+  margin: 12px;
   border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .combo-details img.resized-image-product:hover {
-  transform: scale(1.05);
+  transform: scale(1.06);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
 }
 
 .combo-details ul {
   list-style: none;
   padding: 0;
-  margin: 20px 0;
+  margin: 30px auto;
+  max-width: 600px;
+  text-align: left;
 }
 
 .combo-details li {
-  background: #f2f4fb;
-  margin: 8px auto;
-  padding: 10px 15px;
-  border-radius: 8px;
-  width: 80%;
-  text-align: left;
+  background: var(--light-accent);
+  margin: 10px 0;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 500;
 }
 
 .price {
   display: block;
-  font-size: 1.4em;
+  font-size: 1.5em;
   font-weight: 700;
-  color: #ff8b94;
-  margin-top: 15px;
+  color: var(--accent-color);
+  margin-top: 20px;
 }
 
 /* ===== Buttons ===== */
-.button1, 
-button, 
+.button1,
+button,
 .btn-submit {
-  display: inline-block;
-  background-color: #3651a3;
+  background: var(--primary-color);
   color: #fff;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 25px;
-  font-size: 1em;
+  padding: 12px 36px;
+  border-radius: 30px;
   font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
   text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
 }
 
 .button1:hover,
 button:hover,
 .btn-submit:hover {
-  background-color: #2a4480;
-  transform: translateY(-2px);
+  background: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255,139,148,0.3);
 }
 
 /* ===== Footer ===== */
 #tabs-bottom {
-  background: #3651a3;
-  padding: 15px 0;
+  background: var(--primary-color);
+  padding: 20px 0;
   text-align: center;
 }
 
 #tabs-bottom a {
   color: #fff;
+  margin: 0 20px;
   text-decoration: none;
-  margin: 0 15px;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 #tabs-bottom a:hover {
-  color: #ffda79;
+  color: var(--accent-color);
 }
 
 /* ===== Contact Page ===== */
 .contact-container {
-  max-width: 800px;
-  margin: 60px auto;
+  max-width: 850px;
+  margin: 70px auto;
   background: #fff;
-  padding: 40px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  padding: 50px 30px;
   text-align: center;
 }
 
@@ -158,35 +183,38 @@ button:hover,
 }
 
 .contact-container label {
-  display: block;
-  margin-bottom: 6px;
   font-weight: 600;
-  color: #444;
+  margin-bottom: 8px;
+  display: block;
+  color: var(--primary-color);
 }
 
 .contact-container input,
 .contact-container textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px 14px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   font-size: 1em;
+  transition: border 0.3s ease;
 }
 
-.contact-container textarea {
-  height: 140px;
-  resize: vertical;
+.contact-container input:focus,
+.contact-container textarea:focus {
+  border-color: var(--accent-color);
+  outline: none;
 }
 
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
-  .combo-details img.resized-image-product {
-    width: 90%;
+  #header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
   }
 
   #menu {
-    display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -195,12 +223,16 @@ button:hover,
     margin: 8px;
   }
 
+  .combo-details img.resized-image-product {
+    width: 90%;
+  }
+
   .combo-details {
-    padding: 25px;
+    padding: 25px 15px;
   }
 
   .contact-container {
     margin: 30px 10px;
-    padding: 25px 10px;
+    padding: 25px 15px;
   }
 }
