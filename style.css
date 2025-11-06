@@ -1,270 +1,194 @@
-body{
-    padding    : 0;
-    margin     : 0;
-    font-family: Helvetica;
-}
-
-/*============= HEADER =============*/
-#header{
-     position: fixed;
-     top     : 0;
-     left    : 0;
-     z-index : 500;
-     width   :100%;
-     height  :80px;
-     background-image  : url('images/wood-bg.png');
-     background-repeat: repeat-x;
-}
-
-#header img{
-     display: block;
-     margin : auto;
-     height : 70%;
-     padding-top: 15px; 
-}
-
-/*============= MAIN-HOME =============*/
-
-#main-home{
-    margin-top: 120px;
-}
-
-/*============= BOTTOM-TABS =============*/
-
-#tabs-bottom{
-    position: fixed;
-    bottom : 0;
-    left    : 0;
-    z-index : 500;
-    width   : 100%;
-    height  : 40px;
-    background-color: darkgreen;
-}
-
-#tabs-bottom a{
-    float   : left;
-    display : block;
-    width   : 33%;
-    height  :35px;
-    font-weight : 700;
-    color       : white;
-    text-align  : center;
-    text-decoration : none;
-    padding-top     : 12px;  
-}
-
-/*============= MAIN =============*/
-
-#main{
-    margin-top: 119px;
-    background: url('images/map-blur.png');
-    background-repeat: repeat-y;
-    background-size: cover;
-}
-
-#content{
-    padding-top: 1px;
-    padding-bottom: 50px;
-}
-
-/*============= FORM =============*/
-
-input{
-    width: 100%;
-    height: 25px;
-    margin : 12px 0;
-    border : 1px solid #929292;
-}
-
-textarea{
-    width: 100%;
-    height :65px;
-    margin : 12px 0;
-    border : 1px solid #929292;
-}
-
-.button{
-    display : block;
-    background-color: forestgreen;
-    text-decoration : none;
-    text-align  : center;
-    color       : white;
-    font-size   : 16px;
-    font-weight : 600;
-    margin : 12px 0;
-    padding : 8px 0;
-}
-
-.resized-image {
-    width: 80%;  
-    height: 400px; 
-}
-
-/*============= To make the image responsive =============*/
-.resized-image {
-    width: 80%;  
-    height: 400px;  
-    display: block; 
-    margin: 0 auto; 
-}
-
-/*============= Resize the image using width and height =============*/
-.resized-image-product {
-    width: 30%;  
-    height: 50px;  
-}
-
-/*============= To make the image responsive =============*/
-.resized-image-product {
-    max-width: 100%;
-    height: 50px;
-    display: block; 
-    margin: 0 auto; 
-}
-
-/*============= Resize the image using width and height =============*/
-.resized-image-home {
-    width: 150%; 
-    height: 80px;
-}
-
-/*============= To make the image responsive============= */
-.resized-image-home {
-    max-width: 150%;
-    height: 80px;
-    display: block; 
-    margin:  auto; 
-}
-
-* General Reset */
+/*============= GLOBAL RESET =============*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
-/*============= Body Styling =============*/
+/*============= BODY =============*/
 body {
     background-color: rgb(64, 68, 175);
     color: #333;
     font-size: 16px;
 }
 
-/*============= Combo Section Styles (Main Page) =============*/
+/*============= HEADER (TOP BAR) =============*/
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    width: 100%;
+    height: 100px;
+    background-image: url('images/wood-bg.png');
+    background-repeat: repeat-x;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Logo inside header */
+#header img {
+    height: 60px;
+    width: auto;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease;
+}
+
+#header img:hover {
+    transform: scale(1.05);
+}
+
+/*============= MENU BAR =============*/
+#menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 10px;
+}
+
+/* Menu links */
+#menu a {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#menu a:hover {
+    color: #ffda77;
+    transform: scale(1.1);
+}
+
+/*============= MAIN SECTION (HOME) =============*/
+#main-home {
+    margin-top: 140px; /* Adds space below fixed header */
+}
+
+/*============= COMBO PACK SECTION =============*/
 .combo-packs {
-    padding: 20px;
+    padding: 30px;
     text-align: center;
 }
 
 .combo-packs h1 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #222;
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #fff;
+    letter-spacing: 1px;
 }
 
 .combo-container {
     display: flex;
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
 }
 
-.combo-link {
-    text-decoration: none;
-    color: inherit;
-    font-size: 12px;
-}
-
+/* Individual Combo Cards */
 .combo-item {
     background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    text-align: center;
-    overflow: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    max-width: 280px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    font-size: 1.5em;
+}
 
+.combo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
 
 .combo-item img {
     width: 100%;
-    height: auto;
+    height: 180px;
+    object-fit: cover;
 }
 
 .combo-item h2 {
-    margin: 10px 0;
     font-size: 18px;
-}
-
-.combo-item p {
-    padding: 0 10px;
-    color: #555;
-}
-
-.combo-item .price {
-    display: inline-block;
-    font-weight: bold;
+    padding: 15px;
     color: rgb(64, 68, 175);
-    margin: 10px 0 15px;
 }
 
-.combo-link:hover .combo-item {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+/*============= FOOTER / BOTTOM TABS =============*/
+#tabs-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 500;
+    width: 100%;
+    height: 40px;
+    background-color: darkgreen;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-/*============= Combo Detail Page Styling =============*/
-.combo-details {
-    max-width: 800px;
-    margin: 50px auto;
-    background:rgb(64, 68, 175);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+#tabs-bottom a {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
     text-align: center;
+    flex: 1;
+    padding: 10px 0;
+    transition: background 0.3s ease;
 }
 
-.combo-details h1 {
-    color:rgb(64, 68, 175);
-    font-size: 2.5em;
+#tabs-bottom a:hover {
+    background-color: #228b22;
 }
 
-.combo-details img {
-    max-width: 100%;
-    border-radius: 8px;
+/*============= FORM ELEMENTS =============*/
+input, textarea {
+    width: 100%;
+    border: 1px solid #929292;
+    border-radius: 4px;
+    margin: 12px 0;
+    padding: 8px;
 }
 
-.combo-details p {
-    font-size: 1.2em;
-    margin-top: 10px;
-    color: #555;
+textarea {
+    height: 70px;
 }
 
-.combo-details ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-}
-
-.combo-details ul li {
-    font-size: 1.1em;
-    margin: 5px 0;
-}
-
-.combo-details .back-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    color: #fff;
-    background-color: rgb(64, 68, 175);;
+.button {
+    display: block;
+    background-color: forestgreen;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px 0;
     text-decoration: none;
     border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
-.combo-details .back-btn:hover {
-    background-color: #692bc0;
+.button:hover {
+    background-color: #2e8b57;
+}
+
+/*============= RESPONSIVE DESIGN =============*/
+@media (max-width: 768px) {
+    #menu {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    #menu a {
+        font-size: 16px;
+    }
+
+    #header img {
+        height: 50px;
+    }
 }
