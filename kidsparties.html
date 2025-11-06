@@ -64,6 +64,61 @@
 
         <div class="package">
           <h3>🌈 Ultimate Party</h3>
-          <p>For larger events — go all out with
+          <p>For larger events — go all out with full customization and premium décor.</p>
+          <ul>
+            <li>Luxury themed décor & candy table</li>
+            <li>Custom cake & dessert buffet</li>
+            <li>3 entertainers + sound system</li>
+          </ul>
+          <div class="price">R4,500</div>
+          <a href="contact.html" class="btn-primary">Book Now</a>
+        </div>
+      </div>
+    </section>
 
+    <!-- GALLERY -->
+    <section class="gallery">
+      <h2>Party Moments 🎈</h2>
+      <div class="gallery-grid">
+        <img src="images/kids-party-1.jpg" alt="Kids party 1">
+        <img src="images/kids-party-2.jpg" alt="Kids party 2">
+        <img src="images/kids-party-3.jpg" alt="Kids party 3">
+        <img src="images/kids-party-4.jpg" alt="Kids party 4">
+        <img src="images/kids-party-5.jpg" alt="Kids party 5">
+      </div>
+    </section>
+  </main>
 
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="">
+  </div>
+
+  <script>
+    // Lightbox Script
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.close');
+    const galleryImages = document.querySelectorAll('.gallery-grid img');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
