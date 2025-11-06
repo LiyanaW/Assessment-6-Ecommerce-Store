@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kiddies Parties | Liyana Events</title>
-  <link rel="stylesheet" href="style.css">
-   <style>
+  <link rel="stylesheet" href="styles.css">
+  <style>
     body {
       font-family: "Poppins", sans-serif;
-      background-color: #faf8ff;
+      background-color: #fff8f5;
       color: #333;
       margin: 0;
       padding: 0;
@@ -18,72 +18,63 @@
     .combo-details {
       max-width: 900px;
       margin: 40px auto;
-      background: #fff;
+      background: #ffffff;
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     h1 {
-      color: #7b6cf2;
+      color: #e17ba8;
       margin-bottom: 20px;
-      font-size: 2em;
     }
 
     .resized-image-product {
-      width: 260px;
+      width: 250px;
       height: 180px;
       margin: 10px;
       border-radius: 10px;
       cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
     .resized-image-product:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
     }
 
     ul {
       text-align: left;
-      max-width: 450px;
+      max-width: 400px;
       margin: 0 auto 20px;
-      line-height: 1.7;
     }
 
     .price {
-      display: block;
-      font-size: 1.3em;
-      font-weight: bold;
-      color: #7b6cf2;
-      margin-top: 15px;
-    }
 
-    p {
-      max-width: 700px;
-      margin: 10px auto 20px;
-      font-size: 1em;
-      line-height: 1.6;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #e17ba8;
+   
     }
 
     .button1 {
       display: inline-block;
-      padding: 12px 30px;
-      background-color: #7b6cf2;
-      color: #fff;
+      padding: 10px 25px;
+      background-color: #e17ba8;
+      color: white;
       border: none;
       border-radius: 25px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1em;
-      transition: background 0.3s ease;
+     
+      transition: background 0.3s;
     }
 
     .button1:hover {
-      background-color: #9a8cff;
+      background-color: #ff94c2;
     }
 
-    /* Lightbox modal */
+    /* Lightbox styling */
     .lightbox {
       display: none;
       position: fixed;
@@ -113,7 +104,7 @@
       font-weight: bold;
       cursor: pointer;
     }
-    </style>
+  </style>
 </head>
 <body>
 
@@ -192,12 +183,13 @@
         <!-- Images load here automatically -->
       </div>
     </section>
-  </main>
+	<a href="index.html" class="button1">Back to Home</a>
+  </div>
 
-  <!-- LIGHTBOX -->
+  <!-- LIGHTBOX MODAL -->
   <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img" alt="">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
   </div>
 
   <!-- JS -->
