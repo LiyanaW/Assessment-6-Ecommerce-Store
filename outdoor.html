@@ -1,33 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Combo Pack 4 Details</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combo Pack 4 Details | Liyana Events</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #fff8f8;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .combo-details {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #e17ba8;
+      margin-bottom: 20px;
+    }
+
+    .resized-image-product {
+      width: 250px;
+      height: 180px;
+      margin: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .resized-image-product:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+
+    ul {
+      text-align: left;
+      max-width: 450px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+    }
+
+    .price {
+      display: block;
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #e17ba8;
+      margin: 10px 0;
+    }
+
+    .button1 {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: #e17ba8;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
+      transition: background 0.3s ease;
+    }
+
+    .button1:hover {
+      background-color: #ff94c2;
+    }
+
+    /* Lightbox styling */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 80px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .lightbox-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 10px auto 20px;
+      font-size: 1em;
+      line-height: 1.6;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="combo-details">
-        <h1>Outdoor and Intimate Events</h1>
-        <img src="images/valentines-day-wedding-concept-gift-box-with-ring-dinner-flowers-engagement-proposal_323316-3948.jpg" alt="Outdoor and Intimate" class="resized-image-product"> 
-        <img src="images/original-design-banquet-hall-8542_208657-3168.jpg" class="resized-image-product"> 
-        <img src="images/graduation-congratulations-template-with-hat-balloons_724205-184.jpg" alt="Outdoor and Intimate" class="resized-image-product"> 
-        <p>Combo Pack 4 includes:</p>
-        <ul>
-            <li>75 chairs</li>
-            <li>15 tables</li>
-            <li>Stage setup</li>
-            <li>Luxury decorations</li>
-            <li>Lighting setup</li>
-            <li>30 pillows,6 blankets, picnic setup, and luxury decorations.</li>
-           
-        </ul>
-        <p>This package is perfect for conferences, gala dinners, and premium events.</p>
-        <span class="price">Picnic setup from R3500</span>
-        <span class="price">Intermite events from R5000</span>
-<br>
-        <br>
-        <a href="index.html" class="button1">Back to Home</button></a>        
-        </div>
+  <div class="combo-details">
+    <h1>Outdoor and Intimate Events</h1>
+
+    <!-- Image gallery with lightbox trigger -->
+    <img src="images/valentines-day-wedding-concept-gift-box-with-ring-dinner-flowers-engagement-proposal_323316-3948.jpg" alt="Outdoor and Intimate" class="resized-image-product" onclick="openLightbox(this)">
+    <img src="images/original-design-banquet-hall-8542_208657-3168.jpg" alt="Banquet Hall" class="resized-image-product" onclick="openLightbox(this)">
+    <img src="images/graduation-congratulations-template-with-hat-balloons_724205-184.jpg" alt="Graduation Celebration" class="resized-image-product" onclick="openLightbox(this)">
+
+    <p>Combo Pack 4 includes:</p>
+    <ul>
+      <li>75 chairs</li>
+      <li>15 tables</li>
+      <li>Stage setup</li>
+      <li>Luxury decorations</li>
+      <li>Lighting setup</li>
+      <li>30 pillows, 6 blankets, picnic setup, and luxury decorations</li>
+    </ul>
+
+    <p>This package is perfect for conferences, gala dinners, and premium events.</p>
+
+    <span class="price">🌸 Picnic setup from R3,500</span>
+    <span class="price">✨ Intimate events from R5,000</span>
+
+    <br><br>
+    <a href="index.html" class="button1">Back to Home</a>
+  </div>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightbox.style.display = 'block';
+      lightboxImg.src = img.src;
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
+
