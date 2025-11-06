@@ -1,193 +1,70 @@
-/* ================================
-   Liyana Events – Global Styles
-   ================================ */
-
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-/* ================================
-   Root Variables (Colors, Fonts)
-   ================================ */
-:root {
-  --color-primary: #ff8c94;    /* Soft coral */
-  --color-secondary: #fbd6a5;  /* Pastel peach */
-  --color-accent: #9ad3bc;     /* Mint green */
-  --color-background: #fff8f0; /* Soft cream */
-  --color-text: #333333;
-  --color-heading: #222222;
-
-  --font-primary: 'Poppins', sans-serif;
-  --transition-speed: 0.3s;
-}
-
-/* ================================
-   Global Styles
-   ================================ */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--font-primary);
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--color-text);
-  background-color: var(--color-background);
-}
-
-/* ================================
-   Headings
-   ================================ */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--color-heading);
-  margin-bottom: 0.5em;
-  font-weight: 600;
-}
-
-/* ================================
-   Links
-   ================================ */
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: color var(--transition-speed);
-}
-
-a:hover {
-  color: var(--color-accent);
-  text-decoration: underline;
-}
-
-/* ================================
-   Buttons
-   ================================ */
-button, .btn {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  background-color: var(--color-primary);
-  color: #fff;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all var(--transition-speed) ease-in-out;
-}
-
-button:hover, .btn:hover {
-  background-color: var(--color-accent);
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* ================================
-   Forms
-   ================================ */
-input, textarea, select {
-  width: 100%;
-  padding: 10px 15px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  transition: border var(--transition-speed);
-}
-
-input:focus, textarea:focus, select:focus {
-  border-color: var(--color-primary);
-  outline: none;
-}
-
-/* ================================
-   Navigation Bar
-   ================================ */
-nav {
-  background-color: var(--color-secondary);
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-nav a {
-  margin: 0 10px;
-  font-weight: 500;
-}
-
-/* ================================
-   Cards / Sections
-   ================================ */
-.card {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-/* ================================
-   Animations
-   ================================ */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.6s ease-out both;
-}
-
-/* ================================
-   Footer
-   ================================ */
-footer {
-  background-color: var(--color-secondary);
-  padding: 30px 20px;
-  text-align: center;
-  color: var(--color-text);
-  font-size: 0.9rem;
-}
-
-/* ================================
-   Utility Classes
-   ================================ */
-.text-center {
+.gallery {
+  padding: 40px 20px;
   text-align: center;
 }
 
-.mt-20 {
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
   margin-top: 20px;
 }
 
-.mb-20 {
-  margin-bottom: 20px;
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-/* ================================
-   Responsive Design
-   ================================ */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  nav a {
-    margin: 5px 0;
-  }
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* LIGHTBOX */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+  animation: zoomIn 0.3s ease-in;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: white;
+  font-size: 2em;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.close:hover {
+  transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
