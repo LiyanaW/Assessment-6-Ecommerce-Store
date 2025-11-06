@@ -1,66 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event Packages | Liyana Events</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liyana Events | Making Memories Beautiful</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff7fa;
+      color: #333;
+    }
 
-  <!-- HEADER -->
-  <header id="header">
-    <div class="logo">
-      <img src="images/0001(16).png" alt="Liyana Logo">
-    </div>
-    <nav id="menu">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    header {
+      background-color: #f4a6b8;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      border-bottom: 5px solid #ffc8dd;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    nav {
+      background-color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #444;
+      margin: 0 1.5rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #e75480;
+    }
+
+    .hero {
+      background-image: url('images/event-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      background-color: rgba(0,0,0,0.4);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+    }
+
+    .section {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .section h2 {
+      color: #e75480;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .packages {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .package {
+      background-color: white;
+      width: 280px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 1rem;
+      transition: transform 0.3s;
+    }
+
+    .package:hover {
+      transform: scale(1.05);
+    }
+
+    .package img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .package h3 {
+      color: #e75480;
+      margin-top: 1rem;
+    }
+
+    .package p {
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background-color: #f4a6b8;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .price {
+      display: block;
+      color: #e75480;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Liyana Events</h1>
+    <p>Making Every Celebration Magical ✨</p>
   </header>
 
-  <!-- MAIN SECTION -->
-  <main id="main-home">
-    <section class="combo-packs">
-      <h1>Exclusive Package Combos</h1>
-
-      <div class="combo-container">
-        <a href="kidsparties.html" class="combo-item">
-          <img src="images/birthday-table-with-rainbow-balloons-summer-holiday-park_88194-474.jpg" alt="Kiddies Parties">
-          <h2>Kiddies Parties</h2>
-        </a>
-
-        <a href="weddings-baptisms.html" class="combo-item">
-          <img src="images/istockphoto-1177485677-612x612.jpg" alt="Weddings and Baptisms">
-          <h2>Weddings & Baptisms</h2>
-        </a>
-
-        <a href="large-events.html" class="combo-item">
-          <img src="images/pexels-panditwiguna-2788492.jpg" alt="Corporate Events">
-          <h2>Corporate & Large Events</h2>
-        </a>
-
-        <a href="outdoor.html" class="combo-item">
-          <img src="images/images.jpg" alt="Outdoor and Intimate Events">
-          <h2>Outdoor & Intimate Events</h2>
-        </a>
-
-        <a href="religious-events.html" class="combo-item">
-          <img src="images/pexels-thatguycraig000-2306281.jpg" alt="Religious Events">
-          <h2>Religious Events</h2>
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer id="tabs-bottom">
+  <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
+    <a href="kidsparties.htm">Kids Parties</a>
+    <a href="weddings.html">Weddings</a>
     <a href="contact.html">Contact</a>
-  </footer>
+  </nav>
 
+  <div class="hero">
+    <h2>Celebrate in Style with Liyana Events</h2>
+  </div>
+
+  <section class="section">
+    <h2>Our Popular Packages</h2>
+    <div class="packages">
+      <div class="package">
+        <img src="images/kids-party.jpg" alt="Kids Party">
+        <h3>Kids Party Delight</h3>
+        <p>Bright themes, balloons, and fun setups for unforgettable birthdays!</p>
+        <span class="price">From R1200</span>
+      </div>
+
+      <div class="package">
+        <img src="images/wedding.jpg" alt="Wedding Setup">
+        <h3>Wedding Bliss</h3>
+        <p>Elegant and romantic decor packages tailored to your special day.</p>
+        <span class="price">From R3000</span>
+      </div>
+
+      <div class="package">
+        <img src="images/baptism.jpg" alt="Baptism Decor">
+        <h3>Baptism & Christening</h3>
+        <p>Soft pastel themes and delicate details for precious moments.</p>
+        <span class="price">From R2500</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Liyana Events. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
-
